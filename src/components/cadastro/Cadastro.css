@@ -1,0 +1,68 @@
+.formCadastro{
+    margin-top: 0.51rem;
+    width: 24.5rem;
+    height: 2rem;
+    border-radius: 5px;
+}
+
+.formArea{
+    display: flex;
+    flex-direction: column;    
+}
+
+.tipoArea{
+    margin-top: 0.51rem; 
+}
+
+.formbutton{
+    margin-top: 0.51rem;
+    height: 2rem;
+    color: #c7c7c7c7;
+    background-color: #1C1B22;
+    border: 0px;
+    font-size:18px;
+    font-weight: bold; 
+    border-radius: 5px;
+}
+
+.text{
+    text-align: justify;
+    width: 25rem;   
+}
+.btnArea{
+display: flex;
+flex-direction: row;
+width: 25rem;
+}
+
+.btn1, .btn2{
+    text-decoration: none;
+    border-radius: 5px;
+    border: 0px;
+    background-color: #1C1B22;
+    color: #C7C7C7;
+    font-size:18px;
+    font-weight: bold; 
+    width: 100%;
+    padding:1vh;
+}
+
+.btn1{
+    margin-right: 0.5rem;
+}
+.btn2{
+    margin-left: 0.5rem;
+}
+
+.btn1:hover, .btn2:hover, .formbutton:hover{
+    color: #ffffff;
+    background-color: #4B4959;
+}
+
+.tituloC{
+    text-align: center;
+    font-size: 35px;
+    margin:0px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}

@@ -1,0 +1,32 @@
+.votar{
+
+    border: 0px;
+    width: 137px;
+    text-decoration: none;
+    color: #c7c7c7;
+    font-weight: bold;
+    background-color: #2B2A33;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.votar:hover{
+    color: white;
+    background-color: #4B4959;
+}
+.voteArea{
+    
+    padding-left: 29px;
+
+    
+    /* text-align: center; */
+    
+    
+}
+
+.inp{
+    text-align: center;
+    
+}

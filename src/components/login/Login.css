@@ -1,0 +1,97 @@
+.conteudoLogin{
+    display: flex;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.geral{
+    text-align: center;
+   
+}
+
+.formArea{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    border-bottom: 5000px;
+}
+
+.form{
+    border: 0px;
+    margin-bottom: 5px;
+    margin-left: 8px;
+    width: 10rem;
+}
+
+.forme{
+    display: flex;
+    flex-direction: row;
+}
+
+.BotaoLista{
+    text-decoration: none;
+    padding:2vh;
+    height: 100%;
+    width: 150px;
+    color: #C7C7C7;
+    font-size:16px;
+    font-weight: bold; 
+    border: 0px;
+    background-color: #1C1B22;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+.BotaoLista:hover, .login:hover, .cadastrar:hover{
+    color: #ffffff;
+    background-color: #4B4959;
+}
+
+.login{
+    text-decoration: none;
+    border-radius: 5px;
+    border: 0px;
+    background-color: #1C1B22;
+    color: #C7C7C7;
+    font-size:18px;
+    font-weight: bold; 
+    width: 102.5%;
+}
+
+.titulo{
+    font-size: 35px;
+    margin:0px;
+    margin-top: 25px;
+   font-weight: bold;
+}
+
+.msgErro{
+    margin-top: 1rem;
+    padding: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: rgb(95, 25, 25);
+    color:#C7C7C7;
+    border-radius: 7px;
+    box-shadow: 2px 2px 4px #222324;
+    width: 83%;
+}
+
+.msgErro p{
+    margin: 0px;
+}
+.warning{
+    width: 60px;
+    height: 60px;
+}
+
+.cadastrar{
+    text-decoration: none;
+    border-radius: 5px;
+    border: 0px;
+    background-color: #1C1B22;
+    color: #C7C7C7;
+    font-size:18px;
+    font-weight: bold; 
+    width: 102.5%;
+    padding:1vh;
+}

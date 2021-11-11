@@ -1,0 +1,67 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #c7c7c7;
+    background-color: #36373B;
+}
+
+.rodape{
+    margin-top: 17.59rem;
+    height: 15.24rem;
+    width: 99.9rem;
+    background-color: #1C1B22;
+    position: absolute;
+    bottom: 0;
+    width: 100%; 
+    height: 5.2rem;
+}
+
+.integ{
+    padding-top: 12px;
+    margin-left: 1rem;
+    display: flex; 
+    flex-direction: row;
+}
+
+.integ p{
+    margin-right: 50px;
+    font-size: 18px;
+}
+
+.logo{
+    width: 40px;
+    height: 40px;
+}
+
+.cabecalho{
+    background-color: #1C1B22;
+    display: flex;
+    align-items: center;
+}
+
+.cText{
+    margin-left: 20px;
+    text-decoration: none;
+    color: #c7c7c7;
+    font-weight: bold;
+    background-color: #2B2A33;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 8px;
+    padding-right: 8px;
+
+}
+
+.cText:hover{
+    color: white;
+    background-color: #4B4959;
+}
+
+.conteudo{
+    margin-top: 7rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,23 @@
+.geral{
+    text-align: center;
+   
+}
+
+.titulo{
+    font-size: 35px;
+    margin:0px;
+    margin-top: 25px;
+   font-weight: bold;
+}
+
+.cadastrar{
+    text-decoration: none;
+    border-radius: 5px;
+    border: 0px;
+    background-color: #1C1B22;
+    color: #C7C7C7;
+    font-size:18px;
+    font-weight: bold; 
+    width: 102.5%;
+    padding:1vh;
+}
