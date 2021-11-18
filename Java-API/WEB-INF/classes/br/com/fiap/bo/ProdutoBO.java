@@ -20,10 +20,19 @@ public class ProdutoBO {
 	}
 	
 	public boolean inserir(ProdutoTO cdp) {
+		cdp.setValidade(formatarData(cdp.getValidade()));
+		System.out.println(cdp.toString());
 		return new ProdutoDAO().insert(cdp);
 	}
 	
-    public void atualiza(ProdutoTO cdp) {
+	public String formatarData(String data) {
+		String[] dataSplit = data.split("-");
+		data = dataSplit[2]+"/"+dataSplit[1]+"/"+(Integer.parseInt(dataSplit[0])-2000);
+		return data;
+	}
+    public void atualizar(ProdutoTO cdp) {
+    	cdp.setValidade(formatarData(cdp.getValidade()));
+    	cdp.setDataEntrada(formatarData(cdp.getDataEntrada()));
         cd = new ProdutoDAO();
         cd.update(cdp);
     }

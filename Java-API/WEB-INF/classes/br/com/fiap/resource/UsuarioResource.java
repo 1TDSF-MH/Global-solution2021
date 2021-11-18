@@ -39,6 +39,21 @@ public class UsuarioResource {
 		return usr.listar(id);
 	}
 	
+	@GET
+	@Path("/login/{email}/{senha}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public boolean verificarSenha(@PathParam("email") String email, @PathParam("senha") String senha) {
+		return usr.validarEntrada(email, senha);
+	}
+	
+	@GET
+	@Path("/codigo/{email}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public int mostrarCodigoUser(@PathParam("email") String email) {
+		System.out.println(email);
+		return usr.retornaCodigoUser(email);
+	}
+	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response cadastrar(UsuarioTO user, @Context UriInfo uriInfo) {
@@ -47,19 +62,4 @@ public class UsuarioResource {
 		builder.path(Integer.toString(user.getCodigo()));
 		return Response.created(builder.build()).build();
 	}
-	
-    @PUT
-    @Path("/{codigo}")
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Response atualizar(UsuarioTO user, @PathParam("codigo") int codigo) {
-    	user.setCodigo(codigo);
-    	usr.atualiza(user);
-    	return Response.ok().build();
-    }
-	
-    @DELETE
-    @Path("/{codigo}")
-    public void excluir(@PathParam("codigo") int codigo) {
-    	usr.apagar(codigo);
-    }
 }

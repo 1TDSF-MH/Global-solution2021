@@ -15,35 +15,8 @@ public class ProdutoDAO {
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	
-	public static List<ProdutoTO> produto;
-
 	public ProdutoDAO() {
-		if(produto == null) {
-			produto = new ArrayList<ProdutoTO>();
 
-			ProdutoTO cdp = new ProdutoTO();
-			cdp.setCodigo(1);
-			cdp.setCdEstab(105);
-			cdp.setNome("Arroz 5Kg");
-			cdp.setTipo((byte) 1);
-			cdp.setMarca("Camil");
-			cdp.setValidade("20/11/2021");
-			cdp.setDataEntrada("15/11/2021");
-			cdp.setEstoque(68);
-			produto.add(cdp);
-			
-			cdp = new ProdutoTO();
-			cdp.setCodigo(2);
-			cdp.setCdEstab(106);
-			cdp.setNome("Banana Prata 1Kg");
-			cdp.setTipo((byte) 0);
-			cdp.setMarca(null);
-			cdp.setValidade("08/11/2021");
-			cdp.setDataEntrada("05/11/2021");
-			cdp.setEstoque(35);
-			produto.add(cdp);
-			
-		}
 	}
 
 	public List<ProdutoTO> select() {
@@ -91,14 +64,13 @@ public class ProdutoDAO {
 	public boolean insert(ProdutoTO pd) {
 		try {
 				conexao = CycleDbManager.conectar();
-				pstmt = conexao.prepareStatement("insert into t_c4f_produto values (cd_produto_c4f.nextval, ?, ?, ?, ?, ?, ?, ?);");
+				pstmt = conexao.prepareStatement("insert into t_c4f_produto values (cd_produto_c4f.nextval, ?, ?, ?, ?, to_date(?,'DD/MM/YY'), to_date(sysdate, 'DD/MM/YY'), ?)");
 				pstmt.setInt(1, pd.getCdEstab());
 				pstmt.setString(2, pd.getNome());
 				pstmt.setByte(3, pd.getTipo());		
 				pstmt.setString(4, pd.getMarca());
 				pstmt.setString(5, pd.getValidade());
-				pstmt.setString(6, pd.getDataEntrada());
-				pstmt.setInt(7, pd.getEstoque());
+				pstmt.setInt(6, pd.getEstoque());
 				pstmt.executeUpdate();
 				
 				pstmt.close();
@@ -113,7 +85,7 @@ public class ProdutoDAO {
 	public void update(ProdutoTO pd) {
 		try {
 			conexao = CycleDbManager.conectar();
-			pstmt = conexao.prepareStatement("UPDATE t_c4f_produto SET nm_produto = ?, ds_tipo = ?, ds_marca=?, dt_validade= ?, qt_estoque= ? where cd_produto = ?");
+			pstmt = conexao.prepareStatement("UPDATE t_c4f_produto SET nm_produto = ?, ds_tipo = ?, ds_marca= ?, dt_validade = to_date(?,'DD/MM/YY'), qt_estoque =? where cd_produto = ?");
 			pstmt.setString(1, pd.getNome());
 			pstmt.setByte(2, pd.getTipo());
 			pstmt.setString(3, pd.getMarca());
@@ -140,6 +112,5 @@ public class ProdutoDAO {
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
-		
 	}
 }

@@ -2,6 +2,7 @@ package br.com.fiap.bo;
 
 import java.util.List;
 import br.com.fiap.dao.OngDAO;
+import br.com.fiap.dao.UsuarioDAO;
 import br.com.fiap.to.OngTO;
 
 public class OngBO {
@@ -17,18 +18,24 @@ public class OngBO {
 		return ong.select(id);
 	}
 	
+	public boolean validarEntrada(String email, String senha) {
+		ong = new OngDAO();
+		
+		String[] dados = ong.retornaDadosLoginOng(email, senha);
+		if (dados[1].equals(senha)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public int retornaCodigoOng(String email) {
+		ong = new OngDAO();
+		return ong.buscaCodigoOng(email);
+	}
+	
 	public boolean inserir(OngTO o) {
 		return new OngDAO().insert(o);
 	}
-	
-    public void atualiza(OngTO o) {
-        ong = new OngDAO();
-        ong.update(o);
-    }
-
-    public void apagar(int codigo) {
-    	ong = new OngDAO();
-    	ong.delete(codigo);
-    }
 
 }

@@ -3,10 +3,8 @@ package br.com.fiap.resource;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -16,11 +14,8 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
 import javax.ws.rs.core.UriInfo;
 
-
 import br.com.fiap.bo.OngBO;
 import br.com.fiap.to.OngTO;
-
-
 
 @Path("/associacao")
 public class OngResource {
@@ -40,27 +35,28 @@ public class OngResource {
 		return ong.listar(codigo);
 	}
 	
-//	@POST
-//	@Consumes(MediaType.APPLICATION_JSON)
-//	public Response cadastrar(UsuarioTO produto, @Context UriInfo uriInfo) {
-//		usr.inserir(produto);
-//		UriBuilder builder = uriInfo.getAbsolutePathBuilder();
-//		builder.path(produto.getCnpj());
-//		return Response.created(builder.build()).build();
-//	}
-//	
-//    @PUT
-//    @Path("/{cnpj}")
-//    @Consumes(MediaType.APPLICATION_JSON)
-//    public Response atualizar(UsuarioTO produto, @PathParam("cnpj") String cnpj) {
-//    	produto.setCnpj(cnpj);
-//    	usr.atualiza(produto);
-//    	return Response.ok().build();
-//    }
-//	
-//    @DELETE
-//    @Path("/{codigo}")
-//    public void excluir(@PathParam("codigo") int codigo) {
-//    	usr.apagar(codigo);
-//    }
+	@GET
+	@Path("/login/{email}/{senha}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public boolean verificarSenha(@PathParam("email") String email, @PathParam("senha") String senha) {
+		return ong.validarEntrada(email, senha);
+	}
+
+	@GET
+	@Path("/codigo/{email}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public int mostrarCodigoOng(@PathParam("email") String email) {
+		System.out.println(email);
+		return ong.retornaCodigoOng(email);
+	}
+	
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response cadastrar(OngTO o, @Context UriInfo uriInfo) {
+		ong.inserir(o);
+		UriBuilder builder = uriInfo.getAbsolutePathBuilder();
+		builder.path(Integer.toString(o.getCodigo()));
+		return Response.created(builder.build()).build();
+	}
+
 }
