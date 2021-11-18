@@ -1,3 +1,25 @@
+.icones{
+    text-decoration: none; 
+}
+
+.delete {
+    color: #b40303;
+}
+.delete:hover {
+    color:#C7C7C7;
+}
+
+.edit {
+    color:#C7C7C7;
+}
+.edit:hover {
+    color:#b40303;
+}
+
+.imagem{
+    width:70px;
+    height:70px;
+}
 
 .btn{
     border-radius: 5px;
@@ -5,8 +27,8 @@
     width: 150px;
     color: #C7C7C7;
     font-size:18px;
-    font-weight: bold;
-    border: 0;
+    font-weight: bold; 
+    border: 0px;
     background-color: #1C1B22;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -17,6 +39,11 @@
     background-color: #4B4959;
 }
 
+.titulo{
+    font-size: 35px;
+    margin:0px;
+    font-weight: bold;
+}
 
 table, th, td {
     border: 5px solid #36373B;
@@ -40,6 +67,14 @@ tr:nth-child(even){
     width: 250px;
 }
 
+.marcaProd{
+    width: 150px;
+}
+
+.tipoProd{
+    width: 85px;
+}
+
 .subT{
     font-weight: bold;
     font-size: 22px;
@@ -50,13 +85,10 @@ tr:nth-child(even){
  margin-bottom: 25px;
 }
 
-.tipoProduto{
+.numeroProd{
     width: 85px;
 }
 
-.marcaProduto{
-    width:180px;
-}
 .selectBtn p{
     font-weight: bold;
     user-select: none;

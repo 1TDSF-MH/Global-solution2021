@@ -1,26 +1,18 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import {FaEdit as ED, FaTrash as EX} from 'react-icons/fa'
-import {Link} from 'react-router-dom'
+//import {BiEditAlt as Edit} from 'react-icons/bi'
+//import {RiDeleteBinLine as Del} from 'react-icons/ri'
 import './ListaProduto.css'
-
-
+//import {useHistory} from "react-router-dom";
 
 export default function ListaProdutos(){
     const [produtos, setProdutos] = useState([])
-
+    
     useEffect(()=>{
         fetch("/rest/produto").then((resp) => { return resp.json()
         }).then((resp) => { setProdutos(resp)
         }).catch((error) => console.error(error))
     }, [])
-
-    // const handleDelete = (id) => {
-    //     fetch("/rest/produto/"+id, {method: 'DELETE'
-    //     }).then(()=>{
-    //         window.location="/"
-    //     }).catch((error) => console.error(error))
-    // }
 
     const tipoProduto = (tipo)=>{
         if(tipo === 1){
@@ -33,50 +25,39 @@ export default function ListaProdutos(){
     const dataAtual = () =>{
         var data = new Date(),
             dia  = data.getDate().toString(),
-            diaF = (dia.length == 1) ? '0'+dia : dia,
+            diaF = (dia.length === 1) ? '0'+dia : dia,
             mes  = (data.getMonth()+1).toString(),
-            mesF = (mes.length == 1) ? '0'+mes : mes,
+            mesF = (mes.length === 1) ? '0'+mes : mes,
             anoF = data.getFullYear();
         return diaF+"/"+mesF+"/"+anoF;
     }
 
- 
-
-
-
-
-    
-    
-    
     const tabelaProdutos = (c, i, prioridade) =>{
+
         var formatVal1 = c.validade.replace("00:00:00", "")
         var formatVal2 = formatVal1.split("-")
         var formatVal3 = formatVal2[2]+"/"+formatVal2[1]+"/"+formatVal2[0]
         var validade = formatVal3.replace(" ", "")
 
-        //console.log(validade+" | "+dataAtual())
         var marca = ""
         if(c.marca !== null){
             marca = c.marca
         } else{
-            marca = "S/ marca"
+            marca = "S. marca / Fab. própria"
         }
+
         var lista = 
         <tr key={i}>
             <td >{c.codigo}</td>
             <td className="nomeProd">{c.nome}</td>
-            <td className="marcaProd">{marca}</td>
-            <td className="tipoProd">{tipoProduto(c.tipo)}</td>
+            <td className="marcaProduto">{marca}</td>
+            <td className="tipoProduto">{tipoProduto(c.tipo)}</td>
             <td>{validade}</td>
             <td>{c.estoque}</td>
             <td id={c.codigo}>
                 <input id={c.codigo} type="checkbox" name="select"/>
                 <input className="numeroProd" type="number" name="value" id={c.codigo} placeholder="quantidade" min="1" max={c.estoque}/>
             </td>
-            {/* <td>
-                <Link title="Editar" to={`/editar/${c.codigo}`} className="edit"><ED/></Link> | 
-                <Link title="Excluir" to="/" onClick={handeDelete.bind(this, c.codigo)} className="delete"><EX/></Link> 
-            </td> */}
         </tr>
 
        if(validade === dataAtual() && prioridade === 1){
@@ -85,30 +66,43 @@ export default function ListaProdutos(){
             return lista;     
         }
     }
-   
-    
 
-    const select = () => {
+
+    const selecionarProdutos = () => {
+        var cdOng = window.location.href.substr(window.location.href.length - 4);
+        var lista = [[cdOng, ""]];
+        var campoVazio = true;
         var select = document.getElementsByName("select");
         var valor = document.getElementsByName("value");
+        
         for(var i = 0; i< select.length; i++){
             if(select[i].checked){
 
                 var id = select[i].id;
-                var value = valor[i].value;
-                console.log("ID: "+id+" | QTD: "+value);
+                var qtd = valor[i].value;
 
-                if(value === ""){
+                if(qtd === "") {
                     document.getElementById(id).style.backgroundColor="#4F0000";
-                } else{
+                    campoVazio = false;
+                } else {
                     document.getElementById(id).style.backgroundColor="#3B4044";
+                    lista.push([id, qtd]);
                 }
-        
             }
         }
-       
+        
+        if(campoVazio){
+            fetch("/rest/reserva", {
+                method: 'POST',
+                headers: {
+                    "Content-type" : "application/json"
+                }, body: JSON.stringify(lista)
+            }).then(()=>{
+                window.location="/listaReserva/"+cdOng
+            })
+        }
+        console.log(lista)
     }
-
 
    return(
       <div>
@@ -122,7 +116,7 @@ export default function ListaProdutos(){
                     <th>Tipo</th>
                     <th>Validade</th>
                     <th>Estoque</th>
-                    <th>selecionar</th>
+                    <th>Selecionar</th>
                 </tr>
             </thead>
             <tbody>
@@ -152,9 +146,8 @@ export default function ListaProdutos(){
             </tbody> 
         </table>
 
-        <div className="voteArea">
-            <button title="Votar" to="/votacao"  onClick={select} className="btn">Selecionar produtos</button>   
-        </div>   
+
+            <button title="reserva" onClick={selecionarProdutos} className="btn">Selecionar produtos</button>
 
       </div>
 )}

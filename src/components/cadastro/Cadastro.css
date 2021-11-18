@@ -3,6 +3,7 @@
     width: 24.5rem;
     height: 2rem;
     border-radius: 5px;
+    border: 0px;
 }
 
 .formArea{
@@ -66,3 +67,4 @@ width: 25rem;
     margin-bottom: 15px;
     font-weight: bold;
 }
+

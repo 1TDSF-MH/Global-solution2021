@@ -1,23 +1,27 @@
 .geral{
     text-align: center;
-   
+   display: flex;
+    flex-direction: column;
 }
 
 .titulo{
-    font-size: 35px;
-    margin:0px;
-    margin-top: 25px;
-   font-weight: bold;
+    height: 75px;
+
+
 }
 
-.cadastrar{
+.cadastrar2{
     text-decoration: none;
     border-radius: 5px;
-    border: 0px;
     background-color: #1C1B22;
     color: #C7C7C7;
     font-size:18px;
-    font-weight: bold; 
-    width: 102.5%;
+    font-weight: bold;
     padding:1vh;
+    margin-top: 15px;
+}
+
+.cadastrar2:hover{
+    background-color: #4B4959;
+    color: #ffffff;
 }

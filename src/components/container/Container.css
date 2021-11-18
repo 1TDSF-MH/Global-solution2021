@@ -35,9 +35,15 @@ body{
 }
 
 .cabecalho{
+
     background-color: #1C1B22;
     display: flex;
     align-items: center;
+}
+
+.linkCont{
+    margin-left: 5px;
+    margin-top: 2px;
 }
 
 .cText{
@@ -50,6 +56,7 @@ body{
     padding-bottom: 11px;
     padding-left: 8px;
     padding-right: 8px;
+    border-radius: 8px;
 
 }
 
@@ -64,4 +71,8 @@ body{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.LLogin{
+    text-decoration: none;
 }

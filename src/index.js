@@ -7,3 +7,10 @@ ReactDOM.render(
   <App/>
   </BrowserRouter>, document.getElementById('root')
 );
+
+/*
+INSTALAÇÕES NECESSÁRIAS:
+npm install validator
+npm i cpf-cnpj-validator -S
+
+*/

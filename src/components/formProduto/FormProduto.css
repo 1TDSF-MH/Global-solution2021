@@ -1,0 +1,60 @@
+.regArea{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.radioArea{
+    display: flex;
+    vertical-align: bottom;
+    margin-top: -14px;
+}
+
+.radioArea p{
+    margin-right: 20px;
+}
+
+
+.formProd{
+    resize: none;
+
+    width: 24.5rem;
+    height: 2rem;
+    border-radius: 5px;
+    border: 0;
+
+}
+
+.subT{
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.formButton{
+    margin-top: 0.51rem;
+    margin-bottom: 1rem;
+    height: 2rem;
+    color: #c7c7c7c7;
+    background-color: #1C1B22;
+    border: 0;
+    font-size:18px;
+    font-weight: bold; 
+    border-radius: 5px;
+}
+
+.produtosBtn{
+
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    color: #c7c7c7c7;
+    background-color: #1C1B22;
+    border: 0;
+    font-size:18px;
+    font-weight: bold; 
+    border-radius: 5px;
+}
+
+.formButton:hover, .produtosBtn:hover{
+    color: #ffffff;
+    background-color: #4B4959;
+}
