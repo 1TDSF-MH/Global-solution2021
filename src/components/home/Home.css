@@ -5,8 +5,8 @@
 }
 
 .titulo{
-    height: 75px;
-
+   
+    width: 350px;
 
 }
 
@@ -24,4 +24,10 @@
 .cadastrar2:hover{
     background-color: #4B4959;
     color: #ffffff;
+}
+
+.divImg{
+    margin: auto;
+    width: 50%;
+    
 }

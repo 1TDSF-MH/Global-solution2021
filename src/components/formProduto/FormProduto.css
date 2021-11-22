@@ -13,6 +13,9 @@
 .radioArea p{
     margin-right: 20px;
 }
+.radioArea input{
+    margin-top: 20px;
+}
 
 
 .formProd{
