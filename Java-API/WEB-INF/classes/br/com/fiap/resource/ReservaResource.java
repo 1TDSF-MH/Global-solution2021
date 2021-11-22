@@ -19,7 +19,6 @@ import javax.ws.rs.core.UriInfo;
 
 import br.com.fiap.bo.ReservaBO;
 import br.com.fiap.to.ProdutoTO;
-import br.com.fiap.to.ReservaTO;
 
 @Path("/reserva")
 public class ReservaResource {
@@ -39,6 +38,13 @@ public class ReservaResource {
 		return res.listarDadosReserva(id);
 	}
 
+	@GET
+	@Path("/resumo/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<String[]> mostrarResumo(@PathParam("id") int id) {
+		return res.mostrarDadosResumo(id);
+	}
+
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response cadastrar(ArrayList<int[]> reserva, @Context UriInfo uriInfo) {
@@ -48,10 +54,10 @@ public class ReservaResource {
 	}
 
 	@PUT
-	@Path("/update/{codigo}/{reserva}")
+	@Path("/update/{codigo}")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response atualizar(@PathParam("codigo") int codigo, @PathParam("reserva") int reserva) {
-		res.atualizarEstoque(codigo, reserva);
+	public Response atualizar(@PathParam("codigo") int cdAssoc) {
+		res.atualizarEstoque(cdAssoc);
 		return Response.ok().build();
 	}
 

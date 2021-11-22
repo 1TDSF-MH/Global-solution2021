@@ -46,7 +46,6 @@ public class OngResource {
 	@Path("/codigo/{email}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public int mostrarCodigoOng(@PathParam("email") String email) {
-		System.out.println(email);
 		return ong.retornaCodigoOng(email);
 	}
 	

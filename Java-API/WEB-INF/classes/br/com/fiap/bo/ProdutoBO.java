@@ -20,9 +20,9 @@ public class ProdutoBO {
 	}
 	
 	public boolean inserir(ProdutoTO cdp) {
+		cd = new ProdutoDAO();
 		cdp.setValidade(formatarData(cdp.getValidade()));
-		System.out.println(cdp.toString());
-		return new ProdutoDAO().insert(cdp);
+		return cd.insert(cdp);
 	}
 	
 	public String formatarData(String data) {

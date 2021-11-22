@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.fiap.jdbc.CycleDbManager;
-import br.com.fiap.to.ProdutoTO;
+
 import br.com.fiap.to.ReservaTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -96,6 +96,25 @@ public class ReservaDAO {
 			e.printStackTrace();
 		}
 		return estoque;
+	}
+	
+	
+	public int selectCdReserva(int idAssoc) {
+		int cdReserva = 0;
+		try {
+			conexao = CycleDbManager.conectar();
+			pstmt = conexao.prepareStatement("SELECT * FROM t_c4f_reserva where cd_assoc = ?");
+			pstmt.setInt(1, idAssoc);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				cdReserva = rs.getInt("cd_reserva");
+			}
+			pstmt.close();
+			conexao.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return cdReserva;
 	}
 	
 	public void update(int cdProd, int qtdProd) {

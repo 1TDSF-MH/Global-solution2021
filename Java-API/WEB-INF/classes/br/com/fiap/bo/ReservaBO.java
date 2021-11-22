@@ -1,24 +1,18 @@
 package br.com.fiap.bo;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.fiap.dao.ReservaDAO;
 import br.com.fiap.to.ProdutoTO;
-import br.com.fiap.to.ReservaTO;
-import br.com.fiap.bo.ProdutoBO;
+import br.com.fiap.to.UsuarioTO;
 
 public class ReservaBO {
 	private ProdutoBO pd = new ProdutoBO();
 	private ReservaDAO reserva = new ReservaDAO();
-	
-	public void mostrarValores(ArrayList<int[]> a) {
-		for(int i = 0; i< a.size(); i++) {
-			int[] b = a.get(i);
-			System.out.println("id: "+b[0]+" | valor: "+b[1]);
-		}
-	}
-	
+	private UsuarioBO usr = new UsuarioBO();
+		
 	public void registrarReserva(List<int[]> a) {
 		for(int i=1; i < a.size(); i++) {
 			reserva.insert(a.get(i)[0], a.get(0)[0], a.get(i)[1]);
@@ -47,13 +41,30 @@ public class ReservaBO {
 		reserva.deletar(cdAssoc);
 	}
 	
-	public void atualizarEstoque(int cdProd, int qtReserva){
-		int estoque = reserva.selectEstoque(cdProd);
-		estoque = estoque - qtReserva;
-		if(estoque <= 0) {
-			pd.apagar(cdProd);
-		} else {
-			reserva.update(cdProd, estoque);
+	public void atualizarEstoque(int cdAssoc){
+		List<int[]> lista = reserva.selectDadosProd(cdAssoc);
+		for(int i = 0; i < lista.size(); i++) {
+			int estoque = reserva.selectEstoque(lista.get(i)[0]);
+			estoque = estoque - lista.get(i)[1];
+			if(estoque <= 0) {
+				pd.apagar(lista.get(i)[0]);
+			} else {
+				reserva.update(lista.get(i)[0], estoque);
+			}
 		}
+	}
+	
+	public List<String[]> mostrarDadosResumo(int cdAssoc) {
+		List<int[]> lista = reserva.selectDadosProd(cdAssoc);
+		List<String[]> dados = new ArrayList<>();
+		String[] cdReserva = {Integer.toString(reserva.selectCdReserva(cdAssoc))};
+		dados.add(cdReserva);
+		for(int i = 0; i < lista.size(); i++) {
+			ProdutoTO produto = pd.listar(lista.get(i)[0]);
+			UsuarioTO user = usr.listar(produto.getCdEstab());
+			String[] info = {user.getNome(), user.getEndereco(), Long.toString(user.getTelefone()), Integer.toString(lista.get(i)[0])};
+			dados.add(info);
+		}
+		return dados;
 	}
 }

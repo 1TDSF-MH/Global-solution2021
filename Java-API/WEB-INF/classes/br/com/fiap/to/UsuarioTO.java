@@ -102,4 +102,12 @@ public class UsuarioTO {
 		this.tipo = tipo;
 	}
 
+	
+	@Override
+	public String toString() {
+		return "UsuarioTO [codigo=" + codigo + ", cnpj=" + cnpj + ", nome=" + nome + ", cep=" + cep + ", endereco="
+				+ endereco + ", telefone=" + telefone + ", email=" + email + ", senha=" + senha + ", tipo=" + tipo
+				+ "]";
+	}
+	
 }

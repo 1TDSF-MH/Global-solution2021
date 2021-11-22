@@ -2,7 +2,6 @@ package br.com.fiap.bo;
 
 import java.util.List;
 import br.com.fiap.dao.OngDAO;
-import br.com.fiap.dao.UsuarioDAO;
 import br.com.fiap.to.OngTO;
 
 public class OngBO {

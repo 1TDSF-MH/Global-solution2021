@@ -84,5 +84,13 @@ public class OngTO {
 	public void setNmResponsavel(String nmResponsavel) {
 		this.nmResponsavel = nmResponsavel;
 	}
+
+	@Override
+	public String toString() {
+		return "OngTO [codigo=" + codigo + ", cnpj=" + cnpj + ", nome=" + nome + ", cep=" + cep + ", endereco="
+				+ endereco + ", telefone=" + telefone + ", email=" + email + ", senha=" + senha + ", nmResponsavel="
+				+ nmResponsavel + "]";
+	}
+	
 	
 }
