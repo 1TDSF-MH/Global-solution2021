@@ -1,0 +1,80 @@
+/*
+Caio Lizeo Soares - 87809
+Isabela Bianca Correa de Macedo - 88493
+Jonatan Jacó Mascalhusk de Oliverira Souza - 88221
+Lucas Amorim Marques Pereira - 84659
+Rodrigo Gonzalo Barbosa Segura - 83954
+*/
+
+/*
+    DELETE from t_c4f_associacao;
+    DELETE from t_c4f_reserva;
+    DELETE from t_c4f_produto;
+    DELETE from t_c4f_estabelecimento;
+*/
+
+-- Tabela Associação
+insert into t_c4f_associacao values (cd_assoc_c4f.nextval, '60.184.937/0001-96', 'Associação Efetive', 65062855, 'Rua Nossa Senhora de Guadalupe, 88', 11698715036, 'efetive@sfgate.com', 'G7SnQg', 'Talita Lourenço');
+insert into t_c4f_associacao values (cd_assoc_c4f.nextval, '68.810.220/0001-14', 'Confians Comunidade', 76820970, 'Rua Dom Pedro II, 3000', 16151198003, 'rbartocci1@confians.com.br', 'Baj8fY', 'Raissa Barros');
+insert into t_c4f_associacao values (cd_assoc_c4f.nextval, '70.017.997/0001-78', 'ONG Prioriza Mundo', 90250701, 'Rua A, 99', '24362524096', 'prioriza@addthis.com', '5pgrXt', 'Lilian Machado');
+insert into t_c4f_associacao values (cd_assoc_c4f.nextval, '88.096.830/0001-05', 'Protegien Comunidade', 59031800, 'Rua dos Pajeús, 76', 43809966243, 'protegien@zdnet.com', 'x6gBpS', 'Walter Anderson');
+insert into t_c4f_associacao values (cd_assoc_c4f.nextval, '29.360.097/0001-25', 'Associação TAKE CAR-E', 67145009, 'Quadra Quatro, 4', 82559929367, 'takecare@eepurl.com', 'Egepo7', 'Amélia Dias');
+insert into t_c4f_associacao values (cd_assoc_c4f.nextval, '32.724.444/0001-66', 'Associação Fraterni', 83090290, 'Rua João Ézio Salazar, 12', 6674966884, 'fraterni@mapquest.com', 'CSqpL1', 'Noah Moura');
+insert into t_c4f_associacao values (cd_assoc_c4f.nextval, '94.050.366/0001-19', 'ONG Semeando Amor', 55022460, 'Rua Tertuliano Farias, 266', 18141870876, 'semeandoamor@ycombinator.com', 'NnCrP6', 'Isis Araujo');
+insert into t_c4f_associacao values (cd_assoc_c4f.nextval, '72.493.387/0001-76', 'Instituto Mão Amiga', 54360111, 'Rua Camboja, 401', 4944483036, 'maoamiga@vkontakte.br', 'PpHG25', 'Renan dos Anjos');
+insert into t_c4f_associacao values (cd_assoc_c4f.nextval, '85.230.263/0001-40', 'ONG Amigos da terra', 87508360, 'Rua América, 86', 1605804955, 'amigosterra@github.io', 'Mf8Ion', 'Mathias Ferreira');
+insert into t_c4f_associacao values (cd_assoc_c4f.nextval, '14.059.893/0001-55', 'Instituição Sete Casas', 17048306, 'Rua João Carlos de Andrade, 1902', 2125854169, 'instsetecasas@gmail.com', 'ms7HOz', 'Jennifer Kammer');
+
+-- Tabela Estabelecimento
+
+insert into t_c4f_estabelecimento values (cd_estab_c4f.nextval, '03.043.389/0001-40', 'Henry e Pietro Restaurante ME', 06335300, 'Rua Cravinhos, 392', 1128698175, 'contato@henrypietro.com', 'E1rcTJ', 1);
+insert into t_c4f_estabelecimento values (cd_estab_c4f.nextval, '30.937.026/0001-21', 'Paulista Coffee', 09240030, 'Rua Tutóia, 487', 1128402206, 'pcoffee@wordpress.com', 'QtOnRW', 1);
+insert into t_c4f_estabelecimento values (cd_estab_c4f.nextval, '88.970.227/0001-00', 'Luciana e Marina Mercearia', 04648237, 'Rua Manuel José Gomes, 530', 1128741661, 'sistema@lucianaemarina.com.br', 'B0jUYh', 0);
+insert into t_c4f_estabelecimento values (cd_estab_c4f.nextval, '03.035.389/0001-40', 'Alana Pães e Doces LTDA', 35045310, 'Rua José Pedro Clementino, 557', 3325393561, 'contato@alanapaesedoces.com.br', 'bH2hxx', 1);
+insert into t_c4f_estabelecimento values (cd_estab_c4f.nextval, '70.350.575/0001-10', 'Supermercado MegaTop LTDA', 32220190, 'Rua José do Patrocínio, 491', 3136573464, 'contato@megatop.com', 'HG9aWl', 0);
+insert into t_c4f_estabelecimento values (cd_estab_c4f.nextval, '20.222.532/0001-80', 'Karol Padaria Delivery ME', 35700710, 'Rua Nestor Foscolo, 506', 3136181050, 'faleconosco@ekarolpadaria.com.br', 'dqPt6e', 1);
+insert into t_c4f_estabelecimento values (cd_estab_c4f.nextval, '73.166.488/0001-03', 'Bruna Alimentos LTDA', 1301300, 'Rua José Paulino, 906', 1929394759, 'bruna@brunaalimentos.com', 'n2KjCp', 0);
+insert into t_c4f_estabelecimento values (cd_estab_c4f.nextval, '10.004.054/0001-89', 'Padaria Doce Mel', 18685060, 'Rua Alexandre Raimundo Paccola, 127', 1435848618, 'docemel@padariadm.com', 'wcCNRF', 1);
+insert into t_c4f_estabelecimento values (cd_estab_c4f.nextval, '11.346.333/0001-93', 'Mercado Duas Irmãs LTDA', 06814320, 'Rua Ibirama, 202', 1137741301, 'sac@duasirmas.com', 'N2sEKi', 0);
+insert into t_c4f_estabelecimento values (cd_estab_c4f.nextval, '20.988.470/0001-12', 'Supermercado Chris', 05868210, 'Travessa Sene da Itália, 145', 1126398176, 'sac@chris.com.br', '123abc', 0);
+
+-- Tabela Produto
+
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 104, 'Arroz 5Kg', 1, 'Camil', to_date('20/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 68);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 104, 'Banana Prata 1Kg', 0, NULL, to_date('22/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 57);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 109, 'Açúcar 1Kg', 1, 'Caravelas', to_date('18/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 106);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 104, 'Maçã Argentina 1Kg', 0, 'Turma da Mônica', to_date('21/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 34);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 107, 'Macarrão Espaguete 500g', 1, 'Petybon', to_date('17/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 89);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 107, 'Feijão Carioca 1Kg', 1, 'Kicaldo', to_date('16/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 98);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 108, 'Flocão de Milho 500g', 1, 'Yoki', to_date('22/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 102);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 108, 'Tomate 1Kg', 0, NULL, to_date('16/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 76);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 109, 'Alface Crespa', 0, NULL, to_date('20/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 32);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 109, 'Óleo de Soja 500mL', 1, 'Liza', to_date('21/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 45);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 106, 'Café 500g', 1, 'Pilão', to_date('18/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 37);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 102, 'Extrato de tomate 250g', 1, 'Tarantella', to_date('20/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 67);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 109, 'Farinha de Mandioca 500g', 1, 'Camil', to_date('20/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 154);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 109, 'Ervilha 395g', 1, 'Quero', to_date('19/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 123);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 106, 'Sardinha Enlatada 200g', 1, 'Coqueiro', to_date('17/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 143);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 108, 'Milho 800g', 0, NULL, to_date('20/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 77);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 102, 'Cenoura 1Kg', 0, NULL, to_date('16/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 36);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 102, 'Frango desfiado congelado 800g', 1, 'Sadia', to_date('18/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 54);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 106, 'Leite 1L', 1, 'Piracanjuba', to_date('19/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 100);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 108, 'Salsicha 500g', 1, 'Aurora', to_date('20/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 99);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 108, 'Gelatina 50g Morango', 1, 'Royal', to_date('19/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 32);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 107, 'Suco 1L Goiaba', 1, 'Sufresh', to_date('17/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 23);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 108, 'Sal Marinho 1Kg', 1, 'Cisne', to_date('19/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 100);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 106, 'Cebola 1Kg', 0, NULL, to_date('18/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 56);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 109, 'Pepino 1Kg', 0, NULL, to_date('18/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 57);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 108, 'Pimentão Verde 250g', 0, NULL, to_date('16/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 33);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 103, 'Abacate Unidade', 0, NULL, to_date('20/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 64);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 102, 'Ameixa 500g', 0, NULL, to_date('18/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 24);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 108, 'Laranja Lima 1Kg', 0, NULL, to_date('19/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 42);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 101, 'Pão Francês Unidade', 0, NULL, to_date('15/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 56);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 107,'Sonho Unidade', 0, NULL, to_date('15/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 23);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 100, 'PF Frango grelhado', 0, NULL, to_date('15/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 27);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 100,'PF Picadinho', 0, NULL, to_date('15/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 21);
+insert into t_c4f_produto values (cd_produto_c4f.nextval, 100, 'PF Filé Peixe', 0, NULL, to_date('15/11/21','dd/mm/yy'), to_date(sysdate, 'dd/mm/yy'), 19);
+
+select *from t_c4f_produto
+
+commit;
